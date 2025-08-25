@@ -1,0 +1,130 @@
+/* Box sizing agar padding tidak membuat layout overflow */
+* {
+    box-sizing: border-box;
+}
+
+/* Font dan ukuran dasar */
+body {
+    font-family: monospace;
+    font-size: 13pt;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tabel header rata kiri */
+th {
+    text-align: left;
+    padding-right: 5px;
+}
+
+/* Gaya gambar */
+img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Kotak utama */
+.kotak {
+    border: 1px solid black;
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+/* Judul dengan background kuning lembut, tanpa border, ada ruang bawah */
+.judul {
+    text-align: center;
+    background: #fff8b3; /* kuning lembut */
+    padding: 10px 0;
+    margin-bottom: 30px; /* ruang bawah */
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #666;
+    border: none; /* hilangkan border */
+    border-radius: 6px;
+}
+
+/* Blok dengan flexbox dan foto di kanan */
+.blok {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-direction: row-reverse; /* Ini buat foto di kanan */
+}
+
+/* Kolom kiri (foto) */
+.kiri {
+    flex: 0 0 20%;
+}
+
+/* Kolom kanan (informasi) */
+.kanan {
+    flex: 1;
+    padding: 10px 0;
+}
+
+/* Style tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr th,
+table tr td {
+    padding: 8px 5px;
+    vertical-align: top;
+}
+
+/* Link style */
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Blok pendidikan full lebar dan rata kiri */
+.blok-pendidikan {
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 30px;
+}
+
+.blok-pendidikan ul {
+    padding-left: 20px;
+}
+
+/* Responsif */
+@media only screen and (max-width: 768px) {
+    .kotak {
+        width: 90%;
+        padding: 10px;
+        border: none;
+        box-shadow: none;
+    }
+
+    .blok {
+        display: block;
+    }
+
+    .kiri,
+    .kanan {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 15px;
+        flex: none;
+    }
+
+    img {
+        max-width: 300px;
+        display: block;
+        margin: 0 auto 15px;
+    }
+}
